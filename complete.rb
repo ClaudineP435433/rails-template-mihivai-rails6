@@ -835,6 +835,7 @@ after_bundle do
   generate(:controller, 'pages', 'home', 'legal', '--skip-routes','--no-test-framework')
   generate('devise:install')
   generate('devise', 'User')
+  rails_command 'db:drop db:create db:migrate'
   generate('migration', 'AddAdminToUsers admin:boolean')
   generate("active_admin:install")
   generate("activeadmin_addons:install")
